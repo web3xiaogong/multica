@@ -30,6 +30,48 @@
     "unpin": "Unpin",
     "searchPlaceholder": "Search..."
   },
+  "autopilot": {
+    "pageTitle": "Autopilot",
+    "newAutopilot": "New autopilot",
+    "empty": {
+      "title": "No autopilots yet",
+      "description": "Schedule recurring tasks for your AI agents. Pick a template or start from scratch.",
+      "fromScratch": "Start from scratch"
+    },
+    "columns": {
+      "name": "Name",
+      "agent": "Agent",
+      "mode": "Mode",
+      "status": "Status",
+      "lastRun": "Last run"
+    },
+    "status": {
+      "active": "Active",
+      "paused": "Paused",
+      "archived": "Archived"
+    },
+    "executionMode": {
+      "createIssue": "Create Issue",
+      "runOnly": "Run Only"
+    },
+    "relativeDate": {
+      "today": "Today",
+      "oneDayAgo": "1d ago",
+      "daysAgo": "{days}d ago",
+      "monthsAgo": "{months}mo ago"
+    }
+  },
+  "skills": {
+    "pageTitle": "Skills",
+    "createSkill": "Create Skill",
+    "createSkillTooltip": "Create skill",
+    "empty": {
+      "listTitle": "No workspace skills yet",
+      "listDescription": "Workspace skills are shared across your team and injected into agent runs. Skills already installed in your local runtime are used automatically.",
+      "detailTitle": "Select a skill to view details",
+      "detailDescription": "Workspace skills supplement your local skills and are shared across the team."
+    }
+  },
   "auth": {
     "login": {
       "errors": {

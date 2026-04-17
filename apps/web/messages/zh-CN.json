@@ -30,6 +30,48 @@
     "unpin": "取消置顶",
     "searchPlaceholder": "搜索..."
   },
+  "autopilot": {
+    "pageTitle": "自动编排",
+    "newAutopilot": "新建编排",
+    "empty": {
+      "title": "还没有编排任务",
+      "description": "为你的 AI 智能体设定周期任务。挑个模板或者从头开始。",
+      "fromScratch": "从头开始"
+    },
+    "columns": {
+      "name": "名称",
+      "agent": "智能体",
+      "mode": "模式",
+      "status": "状态",
+      "lastRun": "上次运行"
+    },
+    "status": {
+      "active": "运行中",
+      "paused": "已暂停",
+      "archived": "已归档"
+    },
+    "executionMode": {
+      "createIssue": "创建事项",
+      "runOnly": "仅运行"
+    },
+    "relativeDate": {
+      "today": "今天",
+      "oneDayAgo": "1 天前",
+      "daysAgo": "{days} 天前",
+      "monthsAgo": "{months} 个月前"
+    }
+  },
+  "skills": {
+    "pageTitle": "技能",
+    "createSkill": "新建技能",
+    "createSkillTooltip": "新建技能",
+    "empty": {
+      "listTitle": "尚无工作区技能",
+      "listDescription": "工作区技能在团队间共享，会在智能体运行时注入使用。本机已安装的运行时技能会被自动使用。",
+      "detailTitle": "选择一个技能查看详情",
+      "detailDescription": "工作区技能补充本机技能，并在团队间共享。"
+    }
+  },
   "auth": {
     "login": {
       "errors": {

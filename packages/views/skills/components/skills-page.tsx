@@ -41,6 +41,7 @@ import { skillListOptions, workspaceKeys } from "@multica/core/workspace/queries
 import { PageHeader } from "../../layout/page-header";
 import { FileTree } from "./file-tree";
 import { FileViewer } from "./file-viewer";
+import { useViewTranslations } from "../../common/use-view-translations";
 
 // ---------------------------------------------------------------------------
 // Create Skill Dialog
@@ -614,6 +615,7 @@ function SkillDetail({
 // ---------------------------------------------------------------------------
 
 export default function SkillsPage() {
+  const t = useViewTranslations("skills");
   const isLoading = useAuthStore((s) => s.isLoading);
   const qc = useQueryClient();
   const wsId = useWorkspaceId();
@@ -726,7 +728,7 @@ export default function SkillsPage() {
         {/* Left column — skill list */}
         <div className="overflow-y-auto h-full border-r">
           <PageHeader className="justify-between">
-            <h1 className="text-sm font-semibold">Skills</h1>
+            <h1 className="text-sm font-semibold">{t("pageTitle")}</h1>
             <Tooltip>
               <TooltipTrigger
                 render={
@@ -739,15 +741,15 @@ export default function SkillsPage() {
                   </Button>
                 }
               />
-              <TooltipContent side="bottom">Create skill</TooltipContent>
+              <TooltipContent side="bottom">{t("createSkillTooltip")}</TooltipContent>
             </Tooltip>
           </PageHeader>
           {skills.length === 0 ? (
             <div className="flex flex-col items-center justify-center px-4 py-12">
               <Sparkles className="h-8 w-8 text-muted-foreground/40" />
-              <p className="mt-3 text-sm text-muted-foreground">No workspace skills yet</p>
+              <p className="mt-3 text-sm text-muted-foreground">{t("empty.listTitle")}</p>
               <p className="mt-1 text-xs text-muted-foreground text-center max-w-[280px]">
-                Workspace skills are shared across your team and injected into agent runs. Skills already installed in your local runtime are used automatically.
+                {t("empty.listDescription")}
               </p>
               <Button
                 onClick={() => setShowCreate(true)}
@@ -755,7 +757,7 @@ export default function SkillsPage() {
                 className="mt-3"
               >
                 <Plus className="h-3 w-3" />
-                Create Skill
+                {t("createSkill")}
               </Button>
             </div>
           ) : (
@@ -788,9 +790,9 @@ export default function SkillsPage() {
           ) : (
             <div className="flex h-full flex-col items-center justify-center text-muted-foreground">
               <Sparkles className="h-10 w-10 text-muted-foreground/30" />
-              <p className="mt-3 text-sm">Select a skill to view details</p>
+              <p className="mt-3 text-sm">{t("empty.detailTitle")}</p>
               <p className="mt-1 text-xs text-center max-w-[260px]">
-                Workspace skills supplement your local skills and are shared across the team.
+                {t("empty.detailDescription")}
               </p>
               <Button
                 onClick={() => setShowCreate(true)}
@@ -798,7 +800,7 @@ export default function SkillsPage() {
                 className="mt-3"
               >
                 <Plus className="h-3 w-3" />
-                Create Skill
+                {t("createSkill")}
               </Button>
             </div>
           )}
