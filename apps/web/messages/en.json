@@ -6,6 +6,30 @@
     "loading": "Loading",
     "confirm": "Confirm"
   },
+  "sidebar": {
+    "inbox": "Inbox",
+    "myIssues": "My Issues",
+    "issues": "Issues",
+    "projects": "Projects",
+    "autopilots": "Autopilot",
+    "agents": "Agents",
+    "runtimes": "Runtimes",
+    "skills": "Skills",
+    "settings": "Settings",
+    "newIssue": "New Issue",
+    "workspaces": "Workspaces",
+    "createWorkspace": "Create workspace",
+    "pendingInvitations": "Pending invitations",
+    "workspaceFallback": "Workspace",
+    "join": "Join",
+    "decline": "Decline",
+    "logout": "Log out",
+    "workspaceGroup": "Workspace",
+    "configureGroup": "Configure",
+    "pinned": "Pinned",
+    "unpin": "Unpin",
+    "searchPlaceholder": "Search..."
+  },
   "auth": {
     "login": {
       "errors": {

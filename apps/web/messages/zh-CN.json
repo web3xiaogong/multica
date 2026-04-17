@@ -6,6 +6,30 @@
     "loading": "加载中",
     "confirm": "确认"
   },
+  "sidebar": {
+    "inbox": "收件箱",
+    "myIssues": "我的事项",
+    "issues": "事项",
+    "projects": "项目",
+    "autopilots": "自动编排",
+    "agents": "智能体",
+    "runtimes": "运行时",
+    "skills": "技能",
+    "settings": "设置",
+    "newIssue": "新建事项",
+    "workspaces": "工作区",
+    "createWorkspace": "新建工作区",
+    "pendingInvitations": "待处理邀请",
+    "workspaceFallback": "工作区",
+    "join": "加入",
+    "decline": "拒绝",
+    "logout": "退出登录",
+    "workspaceGroup": "工作区",
+    "configureGroup": "配置",
+    "pinned": "置顶",
+    "unpin": "取消置顶",
+    "searchPlaceholder": "搜索..."
+  },
   "auth": {
     "login": {
       "errors": {
