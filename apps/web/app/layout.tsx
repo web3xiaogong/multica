@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@multica/ui/components/ui/sonner";
 import { cn } from "@multica/ui/lib/utils";
 import { WebProviders } from "@/components/web-providers";
-import { LocaleSync } from "@/components/locale-sync";
 import "./globals.css";
 
 // Font stack: Inter for Latin UI text + system Chinese fonts for zh content.
@@ -80,25 +81,29 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
     <html
-      lang="en"
+      lang={locale}
       suppressHydrationWarning
       className={cn("antialiased font-sans h-full", inter.variable, geistMono.variable)}
     >
       <body className="h-full overflow-hidden">
-        <LocaleSync />
-        <ThemeProvider>
-          <WebProviders>
-            {children}
-          </WebProviders>
-          <Toaster />
-        </ThemeProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ThemeProvider>
+            <WebProviders>
+              {children}
+            </WebProviders>
+            <Toaster />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

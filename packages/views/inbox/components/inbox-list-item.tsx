@@ -5,6 +5,7 @@ import { ActorAvatar } from "../../common/actor-avatar";
 import { Archive } from "lucide-react";
 import type { InboxItem } from "@multica/core/types";
 import { InboxDetailLabel } from "./inbox-detail-label";
+import { useViewTranslations } from "../../common/use-view-translations";
 
 function timeAgo(dateStr: string): string {
   const diff = Date.now() - new Date(dateStr).getTime();
@@ -30,6 +31,7 @@ export function InboxListItem({
   onClick: () => void;
   onArchive: () => void;
 }) {
+  const t = useViewTranslations("inbox.page");
   return (
     <button
       onClick={onClick}
@@ -58,7 +60,7 @@ export function InboxListItem({
             <span
               role="button"
               tabIndex={-1}
-              title="Archive"
+              title={t("actions.archive")}
               onClick={(e) => {
                 e.stopPropagation();
                 onArchive();

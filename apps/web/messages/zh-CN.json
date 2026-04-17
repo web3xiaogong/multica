@@ -1,0 +1,333 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "loading": "加载中",
+    "confirm": "确认"
+  },
+  "auth": {
+    "login": {
+      "errors": {
+        "emailRequired": "请输入邮箱地址",
+        "sendCodeFailed": "验证码发送失败，请确认服务端已启动。",
+        "invalidCode": "验证码无效或已过期",
+        "resendFailed": "验证码重发失败",
+        "cliAuthorizeFailed": "CLI 授权失败，请重新登录。"
+      },
+      "cli": {
+        "title": "授权 CLI",
+        "description": "允许 CLI 以 {email} 的身份访问 Multica？",
+        "authorize": "授权",
+        "authorizing": "授权中...",
+        "useDifferentAccount": "使用其他账号"
+      },
+      "code": {
+        "title": "查看你的邮箱",
+        "description": "我们已向 {email} 发送验证码",
+        "resendIn": "{seconds} 秒后可重发",
+        "resend": "重新发送验证码",
+        "back": "返回"
+      },
+      "form": {
+        "title": "登录 Multica",
+        "description": "输入邮箱以获取登录验证码",
+        "emailLabel": "邮箱",
+        "emailPlaceholder": "you@example.com",
+        "continue": "继续",
+        "sending": "发送验证码中...",
+        "or": "或",
+        "continueWithGoogle": "使用 Google 继续"
+      }
+    }
+  },
+  "workspace": {
+    "new": {
+      "back": "返回",
+      "logout": "退出登录",
+      "title": "欢迎使用 Multica",
+      "description": "创建一个工作区即可开始使用。"
+    },
+    "form": {
+      "errors": {
+        "duplicateSlug": "请更换其他工作区地址",
+        "createFailed": "创建工作区失败"
+      },
+      "nameLabel": "工作区名称",
+      "namePlaceholder": "我的工作区",
+      "urlLabel": "工作区地址",
+      "urlPlaceholder": "my-workspace",
+      "creating": "创建中...",
+      "submit": "创建工作区"
+    }
+  },
+  "issues": {
+    "page": {
+      "errors": {
+        "moveFailed": "移动事项失败"
+      },
+      "breadcrumbFallback": "工作区",
+      "breadcrumbSection": "事项",
+      "emptyTitle": "还没有事项",
+      "emptyDescription": "创建一个事项即可开始协作。"
+    },
+    "header": {
+      "scope": {
+        "all": {
+          "label": "全部",
+          "description": "当前工作区内的全部事项"
+        },
+        "members": {
+          "label": "成员",
+          "description": "分配给团队成员的事项"
+        },
+        "agents": {
+          "label": "智能体",
+          "description": "分配给 AI 智能体的事项"
+        }
+      },
+      "filter": {
+        "placeholder": "筛选...",
+        "noAssignee": "未分配负责人",
+        "noProject": "未关联项目",
+        "members": "成员",
+        "agents": "智能体",
+        "noResults": "没有匹配结果",
+        "tooltip": "筛选",
+        "status": "状态",
+        "priority": "优先级",
+        "assignee": "负责人",
+        "creator": "创建者",
+        "project": "项目",
+        "reset": "重置全部筛选"
+      },
+      "display": {
+        "tooltip": "显示设置",
+        "ordering": "排序方式",
+        "cardProperties": "卡片属性",
+        "ascending": "升序",
+        "descending": "降序",
+        "viewLabel": "视图",
+        "boardView": "看板视图",
+        "listView": "列表视图",
+        "board": "看板",
+        "list": "列表"
+      }
+    }
+  },
+  "agents": {
+    "page": {
+      "toast": {
+        "updated": "智能体已更新",
+        "updateFailed": "更新智能体失败",
+        "archived": "智能体已归档",
+        "archiveFailed": "归档智能体失败",
+        "restored": "智能体已恢复",
+        "restoreFailed": "恢复智能体失败"
+      },
+      "title": "智能体",
+      "showActive": "显示启用中的智能体",
+      "showArchived": "显示已归档的智能体",
+      "empty": {
+        "archived": "暂无已归档的智能体",
+        "active": "暂无启用中的智能体",
+        "all": "还没有智能体",
+        "select": "选择一个智能体以查看详情"
+      },
+      "actions": {
+        "create": "创建智能体"
+      }
+    },
+    "create": {
+      "toast": {
+        "failed": "创建智能体失败"
+      },
+      "title": "创建智能体",
+      "description": "为你的工作区创建一个新的 AI 智能体。",
+      "nameLabel": "名称",
+      "namePlaceholder": "例如：深度研究智能体",
+      "descriptionLabel": "描述",
+      "descriptionPlaceholder": "这个智能体负责什么工作？",
+      "visibilityLabel": "可见范围",
+      "visibility": {
+        "workspaceTitle": "工作区可见",
+        "workspaceDescription": "所有成员都可以分配给它",
+        "privateTitle": "仅自己可见",
+        "privateDescription": "只有你可以分配给它"
+      },
+      "runtimeLabel": "运行时",
+      "runtime": {
+        "mine": "我的",
+        "all": "全部",
+        "loading": "正在加载运行时...",
+        "none": "暂无可用运行时",
+        "registerHint": "请先注册运行时，再创建智能体",
+        "cloud": "云端"
+      },
+      "actions": {
+        "cancel": "取消",
+        "creating": "创建中...",
+        "create": "创建"
+      }
+    },
+    "detail": {
+      "tabs": {
+        "instructions": "指令",
+        "skills": "技能",
+        "tasks": "任务",
+        "environment": "环境变量",
+        "customArgs": "自定义参数",
+        "settings": "设置"
+      },
+      "banner": {
+        "archived": "该智能体已归档，不能再被分配或提及。",
+        "restore": "恢复"
+      },
+      "badge": {
+        "archived": "已归档"
+      },
+      "runtime": {
+        "cloud": "云端",
+        "local": "本地"
+      },
+      "actions": {
+        "archive": "归档智能体"
+      },
+      "dialog": {
+        "title": "确认归档智能体？",
+        "description": "“{name}” 将被归档。归档后不能再被分配或提及，但历史记录会完整保留，之后也可以恢复。",
+        "cancel": "取消",
+        "confirm": "归档"
+      }
+    }
+  },
+  "settings": {
+    "page": {
+      "title": "设置",
+      "groups": {
+        "account": "我的账号",
+        "workspace": "工作区"
+      },
+      "tabs": {
+        "profile": "个人资料",
+        "appearance": "外观",
+        "tokens": "API 令牌",
+        "general": "通用",
+        "repositories": "仓库",
+        "members": "成员"
+      }
+    }
+  },
+  "inbox": {
+    "page": {
+      "errors": {
+        "markRead": "标记已读失败",
+        "archive": "归档失败",
+        "markAllRead": "全部标记已读失败",
+        "archiveAll": "全部归档失败",
+        "archiveRead": "归档已读通知失败",
+        "archiveCompleted": "归档已完成通知失败"
+      },
+      "title": "收件箱",
+      "actions": {
+        "markAllRead": "全部标记为已读",
+        "archiveAll": "全部归档",
+        "archiveAllRead": "归档全部已读",
+        "archiveCompleted": "归档已完成项",
+        "archive": "归档"
+      },
+      "emptyTitle": "暂无通知",
+      "detail": {
+        "emptyInbox": "你的收件箱为空",
+        "selectNotification": "选择一条通知以查看详情"
+      }
+    }
+  },
+  "runtimes": {
+    "page": {
+      "emptySelect": "选择一个运行时以查看详情"
+    },
+    "list": {
+      "title": "运行时",
+      "onlineCount": "{online}/{total} 在线",
+      "mine": "我的",
+      "all": "全部",
+      "owner": "所有者",
+      "allOwners": "全部所有者",
+      "updateAvailable": "有可用更新",
+      "empty": {
+        "mine": "你还没有拥有任何运行时",
+        "owner": "该所有者下没有运行时",
+        "all": "尚未注册任何运行时"
+      },
+      "registerHintPrefix": "运行",
+      "registerHintSuffix": "即可注册本地运行时。"
+    }
+  },
+  "myIssues": {
+    "page": {
+      "errors": {
+        "moveFailed": "移动事项失败"
+      },
+      "breadcrumbFallback": "工作区",
+      "breadcrumbSection": "我的事项",
+      "emptyTitle": "暂无分配给你的事项",
+      "emptyDescription": "你创建或被分配的事项会显示在这里。"
+    },
+    "header": {
+      "scope": {
+        "assigned": {
+          "label": "分配给我",
+          "description": "分配给我的事项"
+        },
+        "created": {
+          "label": "我创建的",
+          "description": "由我创建的事项"
+        },
+        "agents": {
+          "label": "我的智能体",
+          "description": "分配给我名下智能体的事项"
+        }
+      },
+      "filter": {
+        "tooltip": "筛选",
+        "status": "状态",
+        "priority": "优先级",
+        "reset": "重置全部筛选"
+      },
+      "display": {
+        "tooltip": "显示设置",
+        "ordering": "排序方式",
+        "cardProperties": "卡片属性",
+        "ascending": "升序",
+        "descending": "降序",
+        "viewLabel": "视图",
+        "boardView": "看板视图",
+        "listView": "列表视图",
+        "board": "看板",
+        "list": "列表"
+      }
+    }
+  },
+  "batch": {
+    "updated": "已更新 {count} 个事项",
+    "updateFailed": "批量更新事项失败",
+    "deleted": "已删除 {count} 个事项",
+    "deleteFailed": "批量删除事项失败",
+    "selected": "已选择 {count} 项",
+    "status": "状态",
+    "priority": "优先级",
+    "assignee": "负责人",
+    "delete": "删除",
+    "confirmTitle": "确认删除 {count} 个事项？",
+    "confirmDescription": "此操作无法撤销。所选事项及其相关数据将被永久删除。",
+    "cancel": "取消"
+  },
+  "ui": {
+    "common": {
+      "loading": "加载中...",
+      "close": "关闭",
+      "moreEmojis": "更多表情..."
+    }
+  }
+}

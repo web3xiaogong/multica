@@ -13,6 +13,7 @@ import {
 import { ActorAvatar } from "../../common/actor-avatar";
 import { PageHeader } from "../../layout/page-header";
 import { ProviderLogo } from "./provider-logo";
+import { useViewTranslations } from "../../common/use-view-translations";
 
 type RuntimeFilter = "mine" | "all";
 
@@ -29,6 +30,7 @@ function RuntimeListItem({
   hasUpdate: boolean;
   onClick: () => void;
 }) {
+  const t = useViewTranslations("runtimes.list");
   return (
     <button
       onClick={onClick}
@@ -58,7 +60,7 @@ function RuntimeListItem({
       </div>
       <div className="flex items-center gap-1.5 shrink-0">
         {hasUpdate && (
-          <span title="Update available">
+          <span title={t("updateAvailable")}>
             <ArrowUpCircle className="h-3.5 w-3.5 text-info" />
           </span>
         )}
@@ -91,6 +93,7 @@ export function RuntimeList({
   onOwnerFilterChange: (ownerId: string | null) => void;
   updatableIds?: Set<string>;
 }) {
+  const t = useViewTranslations("runtimes.list");
   const wsId = useWorkspaceId();
   const { data: members = [] } = useQuery(memberListOptions(wsId));
 
@@ -122,10 +125,12 @@ export function RuntimeList({
   return (
     <div className="overflow-y-auto h-full border-r">
       <PageHeader className="justify-between">
-        <h1 className="text-sm font-semibold">Runtimes</h1>
+        <h1 className="text-sm font-semibold">{t("title")}</h1>
         <span className="text-xs text-muted-foreground">
-          {filteredRuntimes.filter((r) => r.status === "online").length}/
-          {filteredRuntimes.length} online
+          {t("onlineCount", {
+            online: filteredRuntimes.filter((r) => r.status === "online").length,
+            total: filteredRuntimes.length,
+          })}
         </span>
       </PageHeader>
 
@@ -141,7 +146,7 @@ export function RuntimeList({
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            Mine
+            {t("mine")}
           </button>
           <button
             onClick={() => { onFilterChange("all"); onOwnerFilterChange(null); }}
@@ -151,7 +156,7 @@ export function RuntimeList({
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            All
+            {t("all")}
           </button>
         </div>
 
@@ -169,7 +174,7 @@ export function RuntimeList({
                   <span className="max-w-20 truncate">{selectedOwner.name}</span>
                 </>
               ) : (
-                <span>Owner</span>
+                <span>{t("owner")}</span>
               )}
               <ChevronDown className="h-3 w-3 opacity-50" />
             </DropdownMenuTrigger>
@@ -178,7 +183,7 @@ export function RuntimeList({
                 onClick={() => onOwnerFilterChange(null)}
                 className="flex items-center justify-between"
               >
-                <span className="text-xs">All owners</span>
+                <span className="text-xs">{t("allOwners")}</span>
                 {!ownerFilter && <Check className="h-3.5 w-3.5 text-foreground" />}
               </DropdownMenuItem>
               <DropdownMenuSeparator />
@@ -205,14 +210,14 @@ export function RuntimeList({
         <div className="flex flex-col items-center justify-center px-4 py-12">
           <Server className="h-8 w-8 text-muted-foreground/40" />
           <p className="mt-3 text-sm text-muted-foreground">
-            {filter === "mine" ? "No runtimes owned by you" : ownerFilter ? "No runtimes for this owner" : "No runtimes registered"}
+            {filter === "mine" ? t("empty.mine") : ownerFilter ? t("empty.owner") : t("empty.all")}
           </p>
           <p className="mt-1 text-xs text-muted-foreground text-center">
-            Run{" "}
+            {t("registerHintPrefix")}{" "}
             <code className="rounded bg-muted px-1 py-0.5">
               multica daemon start
             </code>{" "}
-            to register a local runtime.
+            {t("registerHintSuffix")}
           </p>
         </div>
       ) : (

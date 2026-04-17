@@ -3,6 +3,7 @@
 import { useState, lazy, Suspense } from "react";
 import { SmilePlus } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "@multica/ui/components/ui/popover";
+import { useUiTranslations } from "@multica/ui/lib/use-ui-translations";
 
 const EmojiPicker = lazy(() =>
   import("./emoji-picker").then((m) => ({ default: m.EmojiPicker })),
@@ -17,6 +18,7 @@ interface QuickEmojiPickerProps {
 }
 
 function QuickEmojiPicker({ onSelect, align = "start", className }: QuickEmojiPickerProps) {
+  const t = useUiTranslations("ui.common");
   const [open, setOpen] = useState(false);
   const [showFull, setShowFull] = useState(false);
 
@@ -45,7 +47,7 @@ function QuickEmojiPicker({ onSelect, align = "start", className }: QuickEmojiPi
       />
       <PopoverContent align={align} className="w-auto p-0">
         {showFull ? (
-          <Suspense fallback={<div className="p-4 text-sm text-muted-foreground">Loading...</div>}>
+          <Suspense fallback={<div className="p-4 text-sm text-muted-foreground">{t("loading")}</div>}>
             <EmojiPicker onSelect={handleSelect} />
           </Suspense>
         ) : (
@@ -67,7 +69,7 @@ function QuickEmojiPicker({ onSelect, align = "start", className }: QuickEmojiPi
               onClick={() => setShowFull(true)}
               className="mt-1.5 w-full text-xs text-muted-foreground hover:text-foreground text-center py-1 rounded hover:bg-accent transition-colors"
             >
-              More emojis...
+              {t("moreEmojis")}
             </button>
           </div>
         )}

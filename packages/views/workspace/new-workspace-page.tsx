@@ -5,6 +5,7 @@ import { Button } from "@multica/ui/components/ui/button";
 import type { Workspace } from "@multica/core/types";
 import { useLogout } from "../auth";
 import { CreateWorkspaceForm } from "./create-workspace-form";
+import { useViewTranslations } from "../common/use-view-translations";
 
 /**
  * Full-page shell for the "create workspace" transition. Shared between web
@@ -27,6 +28,7 @@ export function NewWorkspacePage({
   onBack?: () => void;
 }) {
   const logout = useLogout();
+  const t = useViewTranslations("workspace.new");
 
   return (
     <div className="relative flex min-h-svh flex-col bg-background px-6 py-12">
@@ -38,7 +40,7 @@ export function NewWorkspacePage({
           onClick={onBack}
         >
           <ArrowLeft />
-          Back
+          {t("back")}
         </Button>
       )}
       <Button
@@ -48,17 +50,17 @@ export function NewWorkspacePage({
         onClick={logout}
       >
         <LogOut />
-        Log out
+        {t("logout")}
       </Button>
 
       <div className="flex flex-1 flex-col items-center justify-center">
         <div className="flex w-full max-w-md flex-col items-center gap-6">
           <div className="text-center">
             <h1 className="text-3xl font-semibold tracking-tight">
-              Welcome to Multica
+              {t("title")}
             </h1>
             <p className="mt-2 text-muted-foreground">
-              Create your workspace to get started.
+              {t("description")}
             </p>
           </div>
           <CreateWorkspaceForm onSuccess={onSuccess} />

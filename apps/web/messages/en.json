@@ -1,0 +1,333 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "loading": "Loading",
+    "confirm": "Confirm"
+  },
+  "auth": {
+    "login": {
+      "errors": {
+        "emailRequired": "Email is required",
+        "sendCodeFailed": "Failed to send code. Make sure the server is running.",
+        "invalidCode": "Invalid or expired code",
+        "resendFailed": "Failed to resend code",
+        "cliAuthorizeFailed": "Failed to authorize CLI. Please log in again."
+      },
+      "cli": {
+        "title": "Authorize CLI",
+        "description": "Allow the CLI to access Multica as {email}?",
+        "authorize": "Authorize",
+        "authorizing": "Authorizing...",
+        "useDifferentAccount": "Use a different account"
+      },
+      "code": {
+        "title": "Check your email",
+        "description": "We sent a verification code to {email}",
+        "resendIn": "Resend in {seconds}s",
+        "resend": "Resend code",
+        "back": "Back"
+      },
+      "form": {
+        "title": "Sign in to Multica",
+        "description": "Enter your email to get a login code",
+        "emailLabel": "Email",
+        "emailPlaceholder": "you@example.com",
+        "continue": "Continue",
+        "sending": "Sending code...",
+        "or": "or",
+        "continueWithGoogle": "Continue with Google"
+      }
+    }
+  },
+  "workspace": {
+    "new": {
+      "back": "Back",
+      "logout": "Log out",
+      "title": "Welcome to Multica",
+      "description": "Create your workspace to get started."
+    },
+    "form": {
+      "errors": {
+        "duplicateSlug": "Choose a different workspace URL",
+        "createFailed": "Failed to create workspace"
+      },
+      "nameLabel": "Workspace Name",
+      "namePlaceholder": "My Workspace",
+      "urlLabel": "Workspace URL",
+      "urlPlaceholder": "my-workspace",
+      "creating": "Creating...",
+      "submit": "Create workspace"
+    }
+  },
+  "issues": {
+    "page": {
+      "errors": {
+        "moveFailed": "Failed to move issue"
+      },
+      "breadcrumbFallback": "Workspace",
+      "breadcrumbSection": "Issues",
+      "emptyTitle": "No issues yet",
+      "emptyDescription": "Create an issue to get started."
+    },
+    "header": {
+      "scope": {
+        "all": {
+          "label": "All",
+          "description": "All issues in this workspace"
+        },
+        "members": {
+          "label": "Members",
+          "description": "Issues assigned to team members"
+        },
+        "agents": {
+          "label": "Agents",
+          "description": "Issues assigned to AI agents"
+        }
+      },
+      "filter": {
+        "placeholder": "Filter...",
+        "noAssignee": "No assignee",
+        "noProject": "No project",
+        "members": "Members",
+        "agents": "Agents",
+        "noResults": "No results",
+        "tooltip": "Filter",
+        "status": "Status",
+        "priority": "Priority",
+        "assignee": "Assignee",
+        "creator": "Creator",
+        "project": "Project",
+        "reset": "Reset all filters"
+      },
+      "display": {
+        "tooltip": "Display settings",
+        "ordering": "Ordering",
+        "cardProperties": "Card properties",
+        "ascending": "Ascending",
+        "descending": "Descending",
+        "viewLabel": "View",
+        "boardView": "Board view",
+        "listView": "List view",
+        "board": "Board",
+        "list": "List"
+      }
+    }
+  },
+  "agents": {
+    "page": {
+      "toast": {
+        "updated": "Agent updated",
+        "updateFailed": "Failed to update agent",
+        "archived": "Agent archived",
+        "archiveFailed": "Failed to archive agent",
+        "restored": "Agent restored",
+        "restoreFailed": "Failed to restore agent"
+      },
+      "title": "Agents",
+      "showActive": "Show active agents",
+      "showArchived": "Show archived agents",
+      "empty": {
+        "archived": "No archived agents",
+        "active": "No active agents",
+        "all": "No agents yet",
+        "select": "Select an agent to view details"
+      },
+      "actions": {
+        "create": "Create Agent"
+      }
+    },
+    "create": {
+      "toast": {
+        "failed": "Failed to create agent"
+      },
+      "title": "Create Agent",
+      "description": "Create a new AI agent for your workspace.",
+      "nameLabel": "Name",
+      "namePlaceholder": "e.g. Deep Research Agent",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "What does this agent do?",
+      "visibilityLabel": "Visibility",
+      "visibility": {
+        "workspaceTitle": "Workspace",
+        "workspaceDescription": "All members can assign",
+        "privateTitle": "Private",
+        "privateDescription": "Only you can assign"
+      },
+      "runtimeLabel": "Runtime",
+      "runtime": {
+        "mine": "Mine",
+        "all": "All",
+        "loading": "Loading runtimes...",
+        "none": "No runtime available",
+        "registerHint": "Register a runtime before creating an agent",
+        "cloud": "Cloud"
+      },
+      "actions": {
+        "cancel": "Cancel",
+        "creating": "Creating...",
+        "create": "Create"
+      }
+    },
+    "detail": {
+      "tabs": {
+        "instructions": "Instructions",
+        "skills": "Skills",
+        "tasks": "Tasks",
+        "environment": "Environment",
+        "customArgs": "Custom Args",
+        "settings": "Settings"
+      },
+      "banner": {
+        "archived": "This agent is archived. It cannot be assigned or mentioned.",
+        "restore": "Restore"
+      },
+      "badge": {
+        "archived": "Archived"
+      },
+      "runtime": {
+        "cloud": "Cloud",
+        "local": "Local"
+      },
+      "actions": {
+        "archive": "Archive Agent"
+      },
+      "dialog": {
+        "title": "Archive agent?",
+        "description": "\"{name}\" will be archived. It won't be assignable or mentionable, but all history is preserved. You can restore it later.",
+        "cancel": "Cancel",
+        "confirm": "Archive"
+      }
+    }
+  },
+  "settings": {
+    "page": {
+      "title": "Settings",
+      "groups": {
+        "account": "My Account",
+        "workspace": "Workspace"
+      },
+      "tabs": {
+        "profile": "Profile",
+        "appearance": "Appearance",
+        "tokens": "API Tokens",
+        "general": "General",
+        "repositories": "Repositories",
+        "members": "Members"
+      }
+    }
+  },
+  "inbox": {
+    "page": {
+      "errors": {
+        "markRead": "Failed to mark as read",
+        "archive": "Failed to archive",
+        "markAllRead": "Failed to mark all as read",
+        "archiveAll": "Failed to archive all",
+        "archiveRead": "Failed to archive read items",
+        "archiveCompleted": "Failed to archive completed"
+      },
+      "title": "Inbox",
+      "actions": {
+        "markAllRead": "Mark all as read",
+        "archiveAll": "Archive all",
+        "archiveAllRead": "Archive all read",
+        "archiveCompleted": "Archive completed",
+        "archive": "Archive"
+      },
+      "emptyTitle": "No notifications",
+      "detail": {
+        "emptyInbox": "Your inbox is empty",
+        "selectNotification": "Select a notification to view details"
+      }
+    }
+  },
+  "runtimes": {
+    "page": {
+      "emptySelect": "Select a runtime to view details"
+    },
+    "list": {
+      "title": "Runtimes",
+      "onlineCount": "{online}/{total} online",
+      "mine": "Mine",
+      "all": "All",
+      "owner": "Owner",
+      "allOwners": "All owners",
+      "updateAvailable": "Update available",
+      "empty": {
+        "mine": "No runtimes owned by you",
+        "owner": "No runtimes for this owner",
+        "all": "No runtimes registered"
+      },
+      "registerHintPrefix": "Run",
+      "registerHintSuffix": "to register a local runtime."
+    }
+  },
+  "myIssues": {
+    "page": {
+      "errors": {
+        "moveFailed": "Failed to move issue"
+      },
+      "breadcrumbFallback": "Workspace",
+      "breadcrumbSection": "My Issues",
+      "emptyTitle": "No issues assigned to you",
+      "emptyDescription": "Issues you create or are assigned to will appear here."
+    },
+    "header": {
+      "scope": {
+        "assigned": {
+          "label": "Assigned",
+          "description": "Issues assigned to me"
+        },
+        "created": {
+          "label": "Created",
+          "description": "Issues I created"
+        },
+        "agents": {
+          "label": "My Agents",
+          "description": "Issues assigned to my agents"
+        }
+      },
+      "filter": {
+        "tooltip": "Filter",
+        "status": "Status",
+        "priority": "Priority",
+        "reset": "Reset all filters"
+      },
+      "display": {
+        "tooltip": "Display settings",
+        "ordering": "Ordering",
+        "cardProperties": "Card properties",
+        "ascending": "Ascending",
+        "descending": "Descending",
+        "viewLabel": "View",
+        "boardView": "Board view",
+        "listView": "List view",
+        "board": "Board",
+        "list": "List"
+      }
+    }
+  },
+  "batch": {
+    "updated": "Updated {count} issues",
+    "updateFailed": "Failed to update issues",
+    "deleted": "Deleted {count} issues",
+    "deleteFailed": "Failed to delete issues",
+    "selected": "{count} selected",
+    "status": "Status",
+    "priority": "Priority",
+    "assignee": "Assignee",
+    "delete": "Delete",
+    "confirmTitle": "Delete {count} issues?",
+    "confirmDescription": "This action cannot be undone. This will permanently delete the selected issues and all associated data.",
+    "cancel": "Cancel"
+  },
+  "ui": {
+    "common": {
+      "loading": "Loading...",
+      "close": "Close",
+      "moreEmojis": "More emojis..."
+    }
+  }
+}

@@ -1,4 +1,6 @@
+import createMiddleware from "next-intl/middleware";
 import { NextResponse, type NextRequest } from "next/server";
+import { defaultLocale, locales } from "./i18n/routing";
 
 // Old workspace-scoped route segments that existed before the URL refactor
 // (pre-#1131). Any URL with these as the FIRST segment is a legacy URL that
@@ -16,8 +18,35 @@ const LEGACY_ROUTE_SEGMENTS = new Set([
   "settings",
 ]);
 
+const intlMiddleware = createMiddleware({
+  locales,
+  defaultLocale,
+  localePrefix: "never",
+});
+
+function handleLocaleQuery(req: NextRequest) {
+  const locale = req.nextUrl.searchParams.get("locale");
+  if (!locale || !locales.includes(locale as (typeof locales)[number])) {
+    return null;
+  }
+
+  const url = req.nextUrl.clone();
+  url.searchParams.delete("locale");
+
+  const response = NextResponse.redirect(url);
+  response.cookies.set("NEXT_LOCALE", locale, {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 365,
+    sameSite: "lax",
+  });
+  return response;
+}
+
 // Next.js 16 renamed `middleware` → `proxy`. The runtime API is identical.
 export function proxy(req: NextRequest) {
+  const localeResponse = handleLocaleQuery(req);
+  if (localeResponse) return localeResponse;
+
   const { pathname } = req.nextUrl;
   const hasSession = req.cookies.has("multica_logged_in");
   const lastSlug = req.cookies.get("last_workspace_slug")?.value;
@@ -62,12 +91,15 @@ export function proxy(req: NextRequest) {
     return NextResponse.next();
   }
 
-  return NextResponse.next();
+  return intlMiddleware(req);
 }
+
+export const middleware = proxy;
 
 export const config = {
   matcher: [
     "/",
+    "/((?!api|auth|_next|_vercel|.*\\..*).*)",
     "/issues/:path*",
     "/projects/:path*",
     "/agents/:path*",

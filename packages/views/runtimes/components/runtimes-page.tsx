@@ -17,6 +17,7 @@ import { useUpdatableRuntimeIds } from "@multica/core/runtimes/hooks";
 import { useWSEvent } from "@multica/core/realtime";
 import { RuntimeList } from "./runtime-list";
 import { RuntimeDetail } from "./runtime-detail";
+import { useViewTranslations } from "../../common/use-view-translations";
 
 type RuntimeFilter = "mine" | "all";
 
@@ -26,6 +27,7 @@ interface RuntimesPageProps {
 }
 
 export default function RuntimesPage({ topSlot }: RuntimesPageProps = {}) {
+  const t = useViewTranslations("runtimes.page");
   const isLoading = useAuthStore((s) => s.isLoading);
   const wsId = useWorkspaceId();
   const qc = useQueryClient();
@@ -126,7 +128,7 @@ export default function RuntimesPage({ topSlot }: RuntimesPageProps = {}) {
           ) : (
             <div className="flex h-full flex-col items-center justify-center text-muted-foreground">
               <Server className="h-10 w-10 text-muted-foreground/30" />
-              <p className="mt-3 text-sm">Select a runtime to view details</p>
+              <p className="mt-3 text-sm">{t("emptySelect")}</p>
             </div>
           )}
         </ResizablePanel>
