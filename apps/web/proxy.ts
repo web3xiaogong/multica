@@ -1,6 +1,5 @@
-import createMiddleware from "next-intl/middleware";
 import { NextResponse, type NextRequest } from "next/server";
-import { defaultLocale, locales } from "./i18n/routing";
+import { locales } from "./i18n/routing";
 
 // Old workspace-scoped route segments that existed before the URL refactor
 // (pre-#1131). Any URL with these as the FIRST segment is a legacy URL that
@@ -17,12 +16,6 @@ const LEGACY_ROUTE_SEGMENTS = new Set([
   "skills",
   "settings",
 ]);
-
-const intlMiddleware = createMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: "never",
-});
 
 function handleLocaleQuery(req: NextRequest) {
   const locale = req.nextUrl.searchParams.get("locale");
@@ -91,7 +84,7 @@ export function proxy(req: NextRequest) {
     return NextResponse.next();
   }
 
-  return intlMiddleware(req);
+  return NextResponse.next();
 }
 
 export const middleware = proxy;
